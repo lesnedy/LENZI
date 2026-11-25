@@ -1,0 +1,28 @@
+{
+  "name": "lenzi",
+  "version": "0.1.0",
+  "private": true,
+  "description": "LENZI — premium, locally operated ride-hailing for Tanzania.",
+  "workspaces": [
+    "apps/web",
+    "packages/shared"
+  ],
+  "scripts": {
+    "dev": "npm run dev:web",
+    "dev:web": "npm run dev --workspace @lenzi/web",
+    "build:web": "npm run build --workspace @lenzi/web",
+    "lint:web": "npm run lint --workspace @lenzi/web",
+    "typecheck:web": "npm run typecheck --workspace @lenzi/web",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:shared": "vitest run packages/shared",
+    "check": "npm run test:shared && npm run lint:web && npm run typecheck:web && npm run build:web"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.18"
+  },
+  "engines": {
+    "node": ">=20.9.0"
+  }
+}
